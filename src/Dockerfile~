@@ -2,6 +2,6 @@ FROM python:3.6.5
 
 RUN mkdir /server
 WORKDIR /server
-COPY . /server
+COPY ./requirements.txtt /server
 
 RUN pip install -r requirements.txt

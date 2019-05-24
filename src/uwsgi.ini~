@@ -1,0 +1,13 @@
+[uwsgi]
+
+
+
+wsgi-file= db.py
+callable = app
+master = true
+
+
+socket = :13334
+
+
+

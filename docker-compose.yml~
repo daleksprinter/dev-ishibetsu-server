@@ -2,13 +2,14 @@ version: '3'
 services:
  app:
   build: './src'
+  container_name: 'app'
   ports: 
    - '13334:13334'
   volumes: 
    - './src:/server'
-  command: python3 db.py
-  depends_on: db
-
+  command: uwsgi uwsgi.ini
+  depends_on:
+   - db
  
  db:
   image: mysql:5.7
@@ -24,6 +25,14 @@ services:
    MYSQL_USER: test
    MYSQL_PASSWORD: test
    MYSQL_DATABASE: test1492_testtable
+
+ nginx:
+  build: ./nginx
+  ports: 
+   - 8080:12229
+  depends_on:
+   - app
+
   
 
 
