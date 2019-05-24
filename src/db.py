@@ -14,13 +14,12 @@ usr = os.environ.get("USR")
 passwd = os.environ.get("PASSWD")
 db = os.environ.get("DB")
 port = os.environ.get("PRT")
-print(host, usr, passwd, db, port)
 
-conn = pymysql.connect(host=host,
-                       user=usr,
-                       db=db,
-                       password=passwd,
-                       port=int(port),
+
+conn = pymysql.connect(host='db',
+                       user='test',
+                       db='test1492_testtable',
+                       password='test',
                        cursorclass=pymysql.cursors.DictCursor
                        )
 
@@ -30,7 +29,7 @@ app = Flask(__name__, template_folder='./')
 
 @app.route('/')
 def index():
-    return 'server is running'
+    return 'server is running in localhost'
 
 
 @app.route('/spot')
