@@ -6,7 +6,7 @@ services:
   ports: 
    - '13334:13334'
   volumes: 
-   - './src:/server'
+   - ./src:/server:Z
   command: uwsgi uwsgi.ini
   depends_on:
    - db
@@ -19,9 +19,9 @@ services:
   ports:
    - "3306:3306"
   volumes:
-   - ./mysql_data:/var/lib/mysql
-   - ./db:/dumpfile
-   - ./db/conf.d:/etc/mysql/conf.d
+   - ./mysql_data:/var/lib/mysql:Z
+   - ./db:/dumpfile:Z
+   - ./db/conf.d:/etc/mysql/conf.d:Z
   environment:
    MYSQL_ROOT_PASSWORD: root
    MYSQL_USER: test
