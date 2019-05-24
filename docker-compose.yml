@@ -1,0 +1,9 @@
+version: '2'
+services:
+ app:
+  build: './src'
+  ports: 
+   - '13334:13334'
+  volumes: 
+   - './src:/server'
+  command: python3 db.py
