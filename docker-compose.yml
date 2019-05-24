@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
  app:
   build: './src'
@@ -7,3 +7,24 @@ services:
   volumes: 
    - './src:/server'
   command: python3 db.py
+
+ 
+ db:
+  image: mysql:5.7
+  ports:
+   - "3306:3306"
+  volumes:
+   - ./mysql_data:/var/lib/mysql
+   - ./db:/dumpfile
+   - ./db/conf.d:/etc/mysql/conf.d
+  environment:
+   MYSQL_ROOT_PASSWORD: root
+   MYSQL_USER: test
+   MYSQL_PASSWORD: test
+   MYSQL_DATABASE: test1492_testtable
+  
+
+
+
+
+

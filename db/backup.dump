@@ -1,0 +1,109 @@
+-- MySQL dump 10.13  Distrib 8.0.15, for osx10.14 (x86_64)
+--
+-- Host: 18.219.39.53    Database: test1492_testtable
+-- ------------------------------------------------------
+-- Server version	8.0.16
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+ SET NAMES utf8mb4 ;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `admin`
+--
+
+DROP TABLE IF EXISTS `admin`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `admin` (
+  `id` int(3) NOT NULL,
+  `authority` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `admin`
+--
+
+LOCK TABLES `admin` WRITE;
+/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+INSERT INTO `admin` VALUES (0,'contributer','cont001'),(1,'administer','admin001');
+/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `spot`
+--
+
+DROP TABLE IF EXISTS `spot`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `spot` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(20) DEFAULT NULL,
+  `info` text,
+  `time` varchar(10) DEFAULT NULL,
+  `season` varchar(10) DEFAULT NULL,
+  `tagid` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `spot`
+--
+
+LOCK TABLES `spot` WRITE;
+/*!40000 ALTER TABLE `spot` DISABLE KEYS */;
+INSERT INTO `spot` VALUES (5,'シャケ釣り銀座','秋になると，遠浅の河口にたくさんの人が集まって，シャケ釣りをしています．車が20台以上，夏よりもにぎやかです．','noon','fall',7),(6,'絶景ツールド北海道','絶景ツールド北海道（2017年9月上旬）','noon','fall',8),(7,'ヤマブドウ狩り','10月ごろになると，みんなでヤマブドウ狩りに出かけます．といっても，すぐ近所のお庭です．手押し車にいっぱい集めて，とてもおいしいジュースを作ります．','noon','fall',9),(8,'ギャラリー日の丘にのぼる月','8月下旬の日暮れ時は，夕焼けの茜色から夜空の藍色まで，空がグラデーションになっています．ふんわり浮かんだ白い月を眺めながら，赤とんぼの歌をくちずさみたくなります．','night','summer',10),(9,'夕暮れ時，函館山と高砂百合','夏の花，高砂百合が咲き乱れる花園は，夕暮れ時も素敵です.','noon','summer',11),(14,'石別ふれあい大運動会','石別ふれあい大運動会：毎年，5月のさいごの日曜日．保育園・小学校・中学校・町内会が合同で，家族まるごと参加します．市長さんや，ずーしーも来るよ！','noon','spring',14),(13,'水平線に並ぶ漁り火','秋になると，水平線に漁り火がびっしり並びます．星が見えなくなるくらいの明るさです．','night','fall',13),(12,'函館山が見える花園','次々に花が咲く天国のような花園です．夏にはケシやラベンダーがにぎやか．顔を上げると海の向こうに函館山．とても気持ちのいい場所です．','noon','summer',12),(16,'トラピストソフト','トラピスト修道院の売店で購入できるソフトクリーム。トラピストで作られたバターが使用されており、非常に滑らかでクリーミーな味わい。ソフトにはトラピストクッキーがトッピングされています。お値段３５０円（コーン、カップ）。','noon','summer',15),(17,'トラピストクッキー','トラピストのバターを練りこみ焼き上げられたクッキー。サクッとしていてどこか懐かしい味。セットの種類が豊富でお土産に最適。','noon','summer',15),(18,'トラピストバター','トラピスト修道院で作られる、日本でも数少ない発酵バター。まろやかでコクのある風味が特徴的で、通常のバターとは段違いです。このバターで作られたソフトクリームやクッキー、飴なども、同売店で売られています。','noon','summer',15),(19,'風の丘　ピザ','風の丘で食べられる窯焼きピザ。Mサイズ800円、Lサイズ1000円。とても大きいのでシェアにも向いています。','noon','summer',16),(21,'風の丘','手作りのログハウスカフェ。ピザ用の石窯やテラス席、展望台などもあります。津軽海峡を眺めることができる展望台から見える景色は絶景です。営業は基本的に土日のみとなっております。','noon','summer',16),(22,'渡島当別駅','北斗市当別にある道南いさりび鉄道線の駅。渡島当別郵便局との合築である。修道院を模した外観をしており、駅舎内には陶器製の製造が飾られている。','noon','summer',17),(23,'道南いさりび鉄道「ながまれ号」','人気の道南いさりび鉄道観光列車「ながまれ号」。函館、世界遺産の白神山地を周遊するツアーが人気を博している。','noon','summer',17),(24,'トラピスト修道院','正式名称は、厳律シート会燈台の聖母トラピスト修道院。日本初の男子修道院。ここで作られるバターが有名で、それを使って作られたソフトクリームやクッキーなども観光客に人気。男性のみ毎週火曜日14:00から内部見学が可能。','noon','summer',18),(25,'並木道ライトアップ','毎年クリスマスの時期に行われるトラピスト修道院前の並木道ライトアップ。光によって幻想的で魅力的な空間演出を楽しむことができます。今年（２０１７年）は１２月２４日１６：００〜１９：００に開催予定。','night','winter',19),(26,'ルルドの洞窟','カトリックの巡礼地として有名な「ルルドの洞窟」。修道院正面から、北海道らしい景色の道のりを徒歩約３０分歩いた先には、聖母マリア像と展望台があります。晴れた日には展望台から青森県を見渡すこともできます。','noon','summer',20),(27,'ギャラリー日の丘','木彫作家の上田公夫さんが新設したギャラリー。津軽海峡を一望することができる。開館は土、日、月曜となっている。','noon','summer',21);
+/*!40000 ALTER TABLE `spot` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tag`
+--
+
+DROP TABLE IF EXISTS `tag`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `tag` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL,
+  `latitude` double DEFAULT NULL,
+  `longitude` double DEFAULT NULL,
+  `opentime` int(11) DEFAULT NULL,
+  `endtime` int(11) DEFAULT NULL,
+  `slope` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tag`
+--
+
+LOCK TABLES `tag` WRITE;
+/*!40000 ALTER TABLE `tag` DISABLE KEYS */;
+INSERT INTO `tag` VALUES (17,'渡島当別駅',41.737513,140.579112,NULL,NULL,'false'),(16,'風の丘',41.741036,140.594588,1100,1800,'true'),(15,'トラピスト売店',41.738613,140.571404,900,1100,'false'),(5,'シャケ釣り銀座',41,140,NULL,NULL,''),(6,'絶景ツールド北海道',41,140,NULL,NULL,''),(7,'シャケ釣り銀座',41.73739,140.58389,NULL,NULL,'false'),(8,'西三ツ石',41.72555,140.55948,NULL,NULL,'false'),(9,'ヤマブドウ狩り',41.73018,140.55472,NULL,NULL,'true'),(10,'ギャラリー日の丘',41.72636,140.55762,NULL,NULL,'true'),(11,'函館山が見える花園',41.72679,140.5578,NULL,NULL,'true'),(12,'函館山が見える花園',41.72669,140.55793,NULL,NULL,'true'),(13,'海岸',41.72216,140.55458,NULL,NULL,'false'),(14,'石別小学校',41.74053,140.58461,NULL,NULL,'true'),(18,'トラピスト修道院',41.740692,140.569055,NULL,NULL,'true'),(19,'並木道',41.736551,140.573076,NULL,NULL,'false'),(20,'ルルドの洞窟',41.7443,140.561922,NULL,NULL,'true'),(21,'ギャラリー日の丘',41.726919,140.557771,1000,1700,'true');
+/*!40000 ALTER TABLE `tag` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2019-05-24 14:10:31
