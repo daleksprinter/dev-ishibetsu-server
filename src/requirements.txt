@@ -2,7 +2,7 @@ asn1crypto==0.24.0
 autopep8==1.4.4
 cffi==1.12.3
 Click==7.0
-cryptography==2.6.1
+cryptography==3.2
 Flask==1.0.2
 gunicorn==19.9.0
 itsdangerous==1.1.0
